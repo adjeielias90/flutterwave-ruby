@@ -1,7 +1,15 @@
 module Flutterwave
   module Utils
     module Constants
-      BASE_URL = defined?(FLUTTERWAVE_BASE_URL) ? FLUTTERWAVE_BASE_URL : 'http://staging1flutterwave.co:8080'.freeze
+      @@mode = 'test'
+
+      FLUTTERWAVE_LIVE_URL = 'https://prod1flutterwave.co:8181'.freeze
+      FLUTTERWAVE_TEST_URL = 'http://staging1flutterwave.co:8080'.freeze
+      BASE_URL = @@mode == 'live' ? FLUTTERWAVE_LIVE_URL : FLUTTERWAVE_TEST_URL
+
+      def self.mode=(mode); @@mode = mode; end
+      def self.mode; @@mode; end
+
       KEY = 'tk_0f86a4ef436f76faab1d3'.freeze
 
       BANK = {
