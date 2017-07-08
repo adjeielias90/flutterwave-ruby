@@ -1,4 +1,4 @@
-require 'net/http'
+require 'net/https'
 require 'uri'
 require 'json'
 require 'flutterwave/utils/constants'
@@ -14,6 +14,7 @@ module Flutterwave
         request.body = body.to_json
         http = Net::HTTP.new(uri.hostname, uri.port)
         http.use_ssl = (uri.scheme == 'https')
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
         response = http.request(request)
 
         JSON.parse(response.body)
