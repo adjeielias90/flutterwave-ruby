@@ -4,6 +4,8 @@ require 'flutterwave/utils/encryption_manager'
 module Flutterwave
   module Helpers
     def post(url, data)
+    	puts url
+    	puts data
       Flutterwave::Utils::NetworkManager.post(url, data)
     end
 

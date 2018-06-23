@@ -10,11 +10,12 @@ module Flutterwave
 
       def self.post(url, body)
         uri = URI.parse("#{BASE_URL}#{url}")
+        puts uri
         request = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')
         request.body = body.to_json
         http = Net::HTTP.new(uri.hostname, uri.port)
         http.use_ssl = (uri.scheme == 'https')
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
+        # http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
         response = http.request(request)
 
         JSON.parse(response.body)
