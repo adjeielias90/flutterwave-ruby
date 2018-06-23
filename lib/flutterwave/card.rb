@@ -179,8 +179,8 @@ module Flutterwave
         cvv: encrypt(:cvv),
         expirymonth: encrypt(:expirymonth),
         expiryyear: encrypt(:expiryyear),
-        narration: encrypt(:narration),
-        merchantid: client.merchant_key
+        merchantid: client.merchant_key,
+        narration: encrypt(:narration)
       }
 
       request_params[:pin] = encrypt(:pin) if options[:authmodel] == 'PIN'
