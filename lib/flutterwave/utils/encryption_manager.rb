@@ -8,7 +8,7 @@ module Flutterwave
 
       def self.encrypt(text, key = KEY)
         key = digest(key)
-        cipher = OpenSSL::Cipher::Cipher.new('des-ede3')
+        cipher = OpenSSL::Cipher.new('des-ede3')
         cipher.encrypt
         cipher.key = key
         cipher_text = cipher.update(text.to_s)
@@ -19,7 +19,7 @@ module Flutterwave
 
       def self.decrypt(text, key = KEY)
         key = digest(key)
-        cipher = OpenSSL::Cipher::Cipher.new('des-ede3')
+        cipher = OpenSSL::Cipher.new('des-ede3')
         cipher.decrypt
         cipher.key = key
         plain_text = cipher.update(Base64.decode64(text.to_s))
