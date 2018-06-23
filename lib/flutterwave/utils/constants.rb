@@ -2,7 +2,7 @@ module Flutterwave
   module Utils
     module Constants
       BASE_URL = (ENV['FLUTTERWAVE_BASE_URL'] ||
-                 'https://prod1flutterwave.co:8181').freeze
+                 'https://flutterwaveprodv2.com').freeze
       KEY = 'tk_0f86a4ef436f76faab1d3'.freeze
 
       BANK = {
