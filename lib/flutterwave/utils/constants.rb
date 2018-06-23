@@ -3,7 +3,7 @@ module Flutterwave
     module Constants
       BASE_URL = (ENV['FLUTTERWAVE_BASE_URL'] ||
                  'https://flutterwaveprodv2.com').freeze
-      KEY = 'tk_0f86a4ef436f76faab1d3'.freeze
+      KEY = 'lk_dwsfgLXCUuRF9G5ImQcv'.freeze
 
       BANK = {
         list_url: '/pwc/rest/fw/banks'
